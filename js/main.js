@@ -5,9 +5,9 @@
  * 1) Get the title for each dog/cat services, and put them into the console using console.log
  * 2) Change the title of the page to "We're the CAT People"
  * 3) Change the main image to be something cat related.
- * 
- * 
- * Harder
+ */
+
+ /* Harder
  * 1) Replace the call to action button background color with "red"
  * 2) Find another image and replace the header (try unsplash.com, get familiar with searching for images)
  * 3) When someone clicks the "Book your next Rover sitter" button, change the text of the button to say "Thanks"
@@ -17,3 +17,10 @@
  * 1) Make the responsive menu work!
  * 2) Implement a modal window - "Sign up now" CTA when someone clicks the 'Sign Up' button
  */ 
+
+document.querySelector("button").addEventListener("click",function () {
+    document.querySelector("#mobile_menu").classList.add("show")
+})
+document.querySelector("#close").addEventListener("click", function() {
+    document.querySelector("#mobile_menu").classList.remove("show")
+})

@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Cabin', sans-serif;
+  font-family: "Cabin", sans-serif;
 }
 .container {
   width: 90%;
@@ -19,10 +19,22 @@ header .container {
 }
 #bars {
   display: none;
-  padding: 5px 10px;
-  border: 1px solid rgb(224, 224, 224);
-  border-radius: 3px;
+  padding: 10px 10px;
   color: #14a96d;
+  border: none;
+  border-radius: 5px;
+}
+#bars:hover {
+  color: hsl(0, 0%, 100%);
+  animation: 0.5s ease-in-out;
+  padding: 11px 11px;
+  background-color: rgba(105, 105, 105, 0.37);
+}
+#mobile_menu {
+  display: none;
+}
+.flex {
+  display: none;
 }
 @media (min-width: 320px) and (max-width: 500px) {
   .container .header_margin a{
@@ -31,7 +43,49 @@ header .container {
   #bars {
     display: block;
   }
+  .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    right: 0%;
+    left: 0%;
+    top: 0%;
+    bottom: 0%;
+    background-color: rgba(0, 0, 0, 0.788);
+  }
+  .flex a {
+    color: #cecdcd;
+    text-decoration: none;
+    padding: 15px;
+  }
+  .flex a:hover {
+    color: white;
+    font-size: 18px;
+  }
+  hr {
+    width: 90%;
+  }
+  #close {
+    background-color: #cecdcd69;
+    border-radius: 3px;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+  }
+  #close:hover {
+    background-color: rgba(255, 255, 255, 0.712);
+    color: #20202069;
+    padding: 6px 11px;
+  }
 }
+.show {
+  display: block !important;
+  animation: showmenu 0.5s ease-in-out;
+}
+
 .header_left {
   display: flex;
   justify-content: space-between;
@@ -50,6 +104,11 @@ header .container {
   margin-right: 20px;
   text-decoration: none;
   color: #66727c;
+  font-size: 15px;
+}
+.header_margin a:hover {
+  color: #464849;
+  font-size: 15.5px;
 }
 .banner {
   width: 100%;
@@ -74,8 +133,7 @@ header .container {
   border: none;
 }
 .banner_content button:hover {
-  background-color: white;
-  color: #14a96d;
+  padding: 17px 102px;
 }
 .banner_phone {
   display: none;
@@ -95,7 +153,7 @@ header .container {
     margin: 50px auto;
     font-size: 14px;
   }
-  .banner_phone p{
+  .banner_phone p {
     font-weight: bold;
   }
   .banner_phone button {
@@ -114,9 +172,9 @@ header .container {
   }
 }
 .services_top p {
-text-align: center;
-font-size: 30px;
-font-weight: bold;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
 }
 .services {
   display: flex;
@@ -149,7 +207,7 @@ font-weight: bold;
   .service_right {
     width: 100%;
   }
-  .service_right>p {
+  .service_right > p {
     font-size: 11px;
     text-align: center;
   }
@@ -181,6 +239,7 @@ font-weight: bold;
 .book_content p {
   width: 90%;
   margin-left: 10px;
+  font-size: 14px;
 }
 .book_top {
   display: flex;
@@ -204,8 +263,8 @@ font-weight: bold;
 .book_bottom button {
   width: 80%;
   margin-left: 50px;
-  margin-bottom: 10px;
-  padding: 15px;
+  margin-bottom: 20px;
+  padding: 15px 16px;
   font-weight: bold;
   color: white;
   background-color: #14a96d;
@@ -213,8 +272,8 @@ font-weight: bold;
   border: none;
 }
 .book_bottom button:hover {
-  background-color: rgb(231, 229, 229);
   color: #14a96d;
+  background-color: rgba(177, 177, 177, 0.39);
 }
 @media (min-width: 320px) and (max-width: 500px) {
   .book_container {
@@ -256,7 +315,7 @@ font-weight: bold;
   position: relative;
   height: 600px;
 }
-.feedback::before{
+.feedback::before {
   position: absolute;
   top: 80px;
   right: 0;
@@ -307,6 +366,7 @@ font-weight: bold;
   .feedback_content p {
     font-size: 11px;
     color: #66727c;
+  }
 }
 .links {
   text-decoration: none;
@@ -333,7 +393,7 @@ font-weight: bold;
     top: 265px;
   }
 }
-  .bottom {
+.bottom {
   margin-top: 180px;
 }
 .bottom h3 {
@@ -352,9 +412,13 @@ font-weight: bold;
   width: 80px;
 }
 .bottom_shield img {
-  width: 70px;
+  width: 69px;
 }
-@media (min-width:320px) and (max-width:500px) {
+.bottom_flex {
+  width: 40%;
+  margin: 10px 15px;
+}
+@media (min-width: 320px) and (max-width: 500px) {
   .bottom h3 {
     font-size: 14px;
     margin-bottom: 50px;
